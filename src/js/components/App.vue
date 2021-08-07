@@ -12,7 +12,7 @@
         </div>
       </div>
 
-      <div class="row text-center">
+      <div class="row text-md-center">
         <div class="task-card col">
           <h2 class="mt-2 text-center">Other days</h2>
           <TodoItem :dayName="'other'" />
