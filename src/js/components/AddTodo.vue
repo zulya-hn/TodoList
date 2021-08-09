@@ -2,6 +2,7 @@
   <form @submit.prevent="onSubmit">
     <input type="text" v-model="title" class="createinput" />
     <button type="submit" class="createbtn">Create</button>
+    <button class="createbtn" @click="removeAllTodos()">Del all</button>
   </form>
 </template>
 
@@ -30,6 +31,9 @@ export default {
         this.$emit('add-todo', newTodo)
         this.title = ''
       }
+    },
+    removeAllTodos() {
+      this.$emit('removeAllTodos')
     }
   }
 }

@@ -5,9 +5,20 @@
         <div class="task-card border-right-0 col text-center position-relative">
           <h2>Saturday</h2>
           <button type="button" class="btn-reset light" @click="toggleStyles()">
-            <!-- <img src="bi-lightbulb.svg" alt="" />
-            <img src="bi-lightbulb-fill.svg" alt="" /> -->
-            <img alt="bulb" class="bulb" :src="'1'" @click="closestBtn()" />
+            <!-- <img alt="bulb" class="bulb" :src="BulbIcon()" /> -->
+            <!-- <img alt="bulb" class="bulb" src="bi-lightbulb-fill.svg" /> -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-lightbulb-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm3 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1-.5-.5z"
+              />
+            </svg>
           </button>
           <TodoItem :dayName="'sat'" />
         </div>
@@ -38,28 +49,17 @@ export default {
     toggleStyles() {
       let mainTag = document.querySelector('.main-tag')
       mainTag.classList.toggle('dark-theme')
-    },
-    closestBtn() {
-      let mainTag = document
-        .querySelector('.main-tag')
-        .classList.contains('dark-theme')
-
-      console.log('привет')
     }
+    // BulbIcon() {
+    //   let mainTag = document
+    //     .querySelector('.main-tag')
+    //     .classList.contains('dark-theme')
+    //   mainTag ? 'bi-lightbulb.svg' : 'bi-lightbulb-fill.svg'
+
+    //   console.log(mainTag)
+    // }
   }
-  // created: function () {
-  //   closestBtn()
-  // }
-  // computed: {
-  //   closestBtn() {
-  //     return document
-  //       .querySelector('.bulb')
-  //       .closest('.light')
-  //       .classList.contains('dark-theme')
-  //       ? 'bi-lightbulb.svg'
-  //       : 'bi-lightbulb-fill.svg'
-  //   }
-  // }
+  // computed: {}
 }
 </script>
 
@@ -103,6 +103,13 @@ export default {
   button,
   input {
     outline: none;
+  }
+
+  .close-red {
+    button {
+      color: #eb0f0f;
+      fill: #eb0f0f;
+    }
   }
 
   .task-card {

@@ -1,6 +1,11 @@
 <template>
   <div>
-    <AddTodo @add-todo="addTodo($event, day)" class="my-4" :dayName="dayName" />
+    <AddTodo
+      @add-todo="addTodo($event, day)"
+      class="my-4"
+      :dayName="dayName"
+      @removeAllTodos="removeAllTodos()"
+    />
 
     <draggable
       v-model="days"
@@ -20,10 +25,9 @@
           </label>
         </span>
 
-        <button @click="removeTodo(todo.id, day)" class="btn-reset">
-          <img src="close-red.svg" width="20" height="20" aria-hidden="true" />
+        <button @click="removeTodo(todo.id, day)" class="btn-reset close-red">
+          <img src="close-boot.svg" width="20" height="20" aria-hidden="true" />
         </button>
-        <!-- <button class="rm" @click="removeTodo(todo.id, day)">&times;</button> -->
       </li>
     </draggable>
   </div>
@@ -73,6 +77,9 @@ export default {
     removeTodo(id, arr) {
       arr.items = arr.items.filter(t => t.id !== id)
       localStorage.removeItem(id)
+    },
+    removeAllTodos() {
+      this.days = []
     },
     addTodo(todo, arr) {
       console.log(todo)
