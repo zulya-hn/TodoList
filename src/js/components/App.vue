@@ -44,7 +44,7 @@ export default {
         .querySelector('.main-tag')
         .classList.contains('dark-theme')
 
-      console.log(mainTag)
+      console.log('привет')
     }
   }
   // created: function () {
