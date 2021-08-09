@@ -65,6 +65,7 @@ export default {
 
 <style lang="scss">
 .main-tag {
+  height: 100vh;
   .btn-reset {
     background: transparent;
     border: none;

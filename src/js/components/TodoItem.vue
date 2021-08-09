@@ -79,6 +79,9 @@ export default {
       localStorage.removeItem(id)
     },
     removeAllTodos() {
+      this.days.forEach(element => {
+        localStorage.removeItem(element.id)
+      })
       this.days = []
     },
     addTodo(todo, arr) {
