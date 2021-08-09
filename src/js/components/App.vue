@@ -2,7 +2,7 @@
   <main class="main-tag">
     <div class="container">
       <div class="row">
-        <div class="task-card border-right-0 col text-center position-relative">
+        <div class="task-card col text-center position-relative">
           <h2>Saturday</h2>
           <button type="button" class="btn-reset light" @click="toggleStyles()">
             <!-- <img alt="bulb" class="bulb" :src="BulbIcon()" /> -->
@@ -146,7 +146,7 @@ export default {
   }
 
   input {
-    margin-right: 1rem;
+    margin-right: 0.2rem;
   }
 
   .done {
