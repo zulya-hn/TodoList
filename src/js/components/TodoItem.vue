@@ -2,14 +2,28 @@
   <div>
     <AddTodo @add-todo="addTodo($event, day)" class="my-4" :dayName="dayName" />
 
-    <draggable v-model="days" group="list" @start="drag = true" @end="drag = false" @change="changeElementPosition($event, dayName)">
+    <draggable
+      v-model="days"
+      group="list"
+      @start="drag = true"
+      @end="drag = false"
+      @change="changeElementPosition($event, dayName)"
+    >
       <li class="vertical-center" v-for="todo of days" :key="todo.id">
         <span>
-          <label :for="todo.id + todo.title" :class="{ done: todo.completed }" @click="changeTodoState(todo)">
+          <label
+            :for="todo.id + todo.title"
+            :class="{ done: todo.completed }"
+            @click="changeTodoState(todo)"
+          >
             {{ todo.title }}
           </label>
         </span>
-        <button class="rm" @click="removeTodo(todo.id, day)">&times;</button>
+
+        <button @click="removeTodo(todo.id, day)" class="btn-reset">
+          <img src="close-red.svg" width="20" height="20" aria-hidden="true" />
+        </button>
+        <!-- <button class="rm" @click="removeTodo(todo.id, day)">&times;</button> -->
       </li>
     </draggable>
   </div>
@@ -57,7 +71,7 @@ export default {
       }
     },
     removeTodo(id, arr) {
-      arr.items = arr.items.filter((t) => t.id !== id)
+      arr.items = arr.items.filter(t => t.id !== id)
       localStorage.removeItem(id)
     },
     addTodo(todo, arr) {
@@ -92,37 +106,3 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.task-card {
-  border: 2px #dee2e6 solid;
-}
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  border: 1px solid #ccc;
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5rem 2rem;
-  margin-bottom: 1rem;
-  align-items: center;
-}
-
-.rm {
-  background: #da1f24;
-  color: #fff;
-  border-radius: 50%;
-  font-weight: bold;
-}
-
-input {
-  margin-right: 1rem;
-}
-
-.done {
-  text-decoration: line-through;
-}
-</style>
