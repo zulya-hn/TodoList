@@ -76,13 +76,32 @@ export default {
 
 <style lang="scss">
 .main-tag {
+  h2 {
+    color: #465046;
+  }
+  background-color: #e6f9e7;
   min-height: 100vh;
   .btn-reset {
     background: transparent;
     border: none;
     outline: none;
   }
+  .createbtn {
+    border: 2px solid #465046;
+    border-radius: 0.5rem;
+    background-color: #cdefce;
+  }
+  .createinput {
+    border: 2px solid #465046;
+    border-radius: 0.5rem;
+    background-color: #f6fff7;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
   &.dark-theme {
+    h2 {
+      color: #b1b6bb;
+    }
     background-color: #2b3d50;
     color: #b1b6bb;
     button {
@@ -90,21 +109,18 @@ export default {
     }
     .createbtn {
       background-color: #1d274a;
-      border: 2px solid #060b1d;
+      border-color: #060b1d;
       border-radius: 0.5rem;
       color: #ced0d3;
     }
     .createinput {
       background-color: #000f466b;
-      border: 2px solid #060b1d;
+      border-color: #060b1d;
       border-radius: 0.5rem;
       color: #ced0d3;
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
     }
     li {
       border: 1px solid #060b1d;
-      border-radius: 1rem;
       color: #ced0d3;
     }
     .task-card {
@@ -128,6 +144,7 @@ export default {
   .task-card {
     border: 2px #dee2e6 solid;
     padding: 1rem 0.5rem;
+    background-color: #e6f9e7;
   }
 
   .light {
@@ -147,7 +164,7 @@ export default {
   }
 
   li {
-    border: 1px solid #ccc;
+    border: 1px solid #617161;
     display: flex;
     justify-content: space-between;
     padding-right: 0.5rem;
@@ -156,6 +173,7 @@ export default {
     padding-left: 1rem;
     margin-bottom: 0.5rem;
     align-items: center;
+    border-radius: 1rem;
   }
 
   input {
