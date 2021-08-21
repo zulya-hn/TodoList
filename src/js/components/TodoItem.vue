@@ -79,10 +79,15 @@ export default {
       localStorage.removeItem(id)
     },
     removeAllTodos() {
-      this.days.forEach(element => {
-        localStorage.removeItem(element.id)
-      })
-      this.days = []
+      let isSureDeleteAll = confirm(
+        'Are you sure you want to delete everything?'
+      )
+      if (isSureDeleteAll) {
+        this.days.forEach(element => {
+          localStorage.removeItem(element.id)
+        })
+        this.days = []
+      }
     },
     addTodo(todo, arr) {
       console.log(todo)
